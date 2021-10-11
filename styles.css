@@ -1,0 +1,45 @@
+body {
+  font-family: sans-serif;
+  color: #fff;
+  background: #000000;
+}
+
+button {
+  background: none;
+  border: 0;
+  border-radius: 4px;
+}
+
+form button,
+form input {
+  border: 0;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 0.5em;
+}
+
+form button {
+  background: #ffdb03;
+  color: #000;
+  text-transform: uppercase;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: disc;
+}
+li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.remove {
+  background: red;
+  height: 30px;
+  color: #fff;
+  font-weight: bold;
+}

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "..\\Real State"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "js-basics - interview"
+	}
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <h1>Can you change my text?</h1>
+    <p1>Search task</p1>
+    <form id="search-tasks">
+      <input type="text" name="search-task" id="search-task-id" />
+    </form>
+    <p2>Create task</p2>
+
+    <form id="add-tasks" action="post">
+      <input type="text" name="task" id="input-task" />
+      <button type="submit">Add task</button>
+    </form>
+    <h2 id="numberOfTasksId">3 tasks</h2>
+	<div id="tasksList">
+		<ul id=listOfTasks>
+		<li>
+			<p class="taskName">Interview with Kim</p>
+			<button class="remove">Remove</button>
+		</li>
+		<li>
+			<p class="taskName">Interview with Tom</p>
+			<button class="remove">Remove</button>
+		</li>
+		
+		</ul>
+	</div>
+    <script src="index.js"></script>
+  </body>
+</html>
