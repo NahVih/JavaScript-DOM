@@ -1,0 +1,71 @@
+ var css = 
+
+'<style>'+
+	'.hideContainerStars {'+
+		'display: none !important;'+	
+	'}'+ 
+'</style>';
+
+const valueOfStars = 0;
+
+function hidingStars (container) {container.classList.add("hideContainerStars")};
+
+function changingStarsLook (starsValue, container) {
+	if (parseInt(starsValue.dataset.rating) === parseInt(valueOfStars)) {
+		hidingStars(container);
+	}
+};
+
+
+function buildTargetControlExpB() {
+
+var head = document.head;
+head.insertAdjacentHTML("afterbegin",css);
+	
+let getStarsValue = document.querySelector(".stamped-main-badge span");
+let getContainerToBeHidden = document.querySelector(".stamped-main-badge");
+
+changingStarsLook(getStarsValue, getContainerToBeHidden);
+
+}
+
+function awaitElementToBuildTargetControlExpB() {
+
+	
+const targetNode = document.querySelector(".omega");
+const config = { childList: true, subtree: true };
+
+const callback = function(mutationsList, observer) {
+    for(let mutation of mutationsList) {
+        if (mutation.type === 'childList') {
+            buildTargetControlExpB();
+        }
+    }
+};
+
+const observer = new MutationObserver(callback);
+observer.observe(targetNode, config);
+
+	
+}
+
+function waitForElement(selector, callback, timeout = 8000, fallback = null) {
+		let maxCount = timeout;
+		const checkExist = setInterval(() => {
+			maxCount -= 10;
+			const element = document.querySelector(selector);
+			if (element != null) {
+				clearInterval(checkExist);
+				callback(element);
+			} else if (maxCount <= 0) {
+				clearInterval(checkExist);
+				if (fallback != null) fallback();
+			}
+		}, 10);
+	}
+
+
+waitForElement(".omega", (elem) => {
+		awaitElementToBuildTargetControlExpB();
+     
+})  
